@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Button } from "@jksaunders/bonfire";
 
 const App = () => (
-  <Button>Hi!</Button>  
+  <Button>Hello!</Button>  
 );
 
 ReactDOM.render(
