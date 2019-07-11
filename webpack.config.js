@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = () => ({
   entry: "./src/index.js",
@@ -12,6 +13,7 @@ module.exports = () => ({
     port: 9101
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "Debra Dynes Family House",
       template: "index.html"
