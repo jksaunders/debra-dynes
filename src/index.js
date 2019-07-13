@@ -1,30 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import PropTypes from "prop-types";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-
-const Home = () => (
-  <h1>Home!</h1>
-);
-
-const AboutUs = () => (
-  <h1>About us!</h1>
-);
-
-const AppRouter = ({ children }) => (
-  <Router>
-    {children}
-    <Route path="/home/" component={Home} />
-    <Route path="/about/" component={AboutUs} />
-  </Router>
-);
-AppRouter.propTypes = {
-  children: PropTypes.node
-};
-AppRouter.defaultProps = {
-  children: null
-};
+import { AppRouter } from "./components";
 
 const Header = () => (
   <div>
@@ -34,17 +12,15 @@ const Header = () => (
 );
 
 const App = () => (
-  <div>
+  <AppRouter>
     <Header />
-  </div>
+  </AppRouter>
 );
 
 ReactDOM.render(
   (
     <ThemeProvider theme={{ mode: "dark", layout: "compact" }}>
-      <AppRouter>
-        <App />
-      </AppRouter>
+      <App />
     </ThemeProvider>
   ),
   // eslint-disable-next-line no-undef
