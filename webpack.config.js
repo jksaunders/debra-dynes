@@ -24,7 +24,7 @@ module.exports = () => ({
       {
         test: /\.(js|jsx)$/,
         enforce: "pre",
-        exclude: /node_modules/,
+        exclude: /node_modules|bonfire/,
         loader: "eslint-loader",
         options: {
           emitWarnings: true,
