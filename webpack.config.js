@@ -8,6 +8,12 @@ module.exports = () => ({
     filename: "main.js",
     path: path.resolve(__dirname, "dist")
   },
+  resolve: {
+    alias: {
+      react: path.resolve(__dirname, "node_modules", "react"),
+      "styled-components": path.resolve(__dirname, "node_modules", "styled-components"),
+    }
+  },
   devServer: {
     contentBase: "./dist",
     port: 9101
