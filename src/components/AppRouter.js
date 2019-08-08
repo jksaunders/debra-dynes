@@ -14,7 +14,7 @@ const defaultProps = {
 const AppRouter = ({ children }) => (
   <Router>
     {children}
-    <Route path="/home/" component={Home} />
+    <Route path="/" component={Home} exact />
     <Route path="/about/" component={AboutUs} />
   </Router>
 );

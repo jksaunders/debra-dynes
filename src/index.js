@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import { withRouter } from "react-router-dom";
 import { useGesture } from "react-use-gesture";
 import styled, { ThemeProvider } from "styled-components";
-import { Header, Bar, Typography } from "@jksaunders/bonfire";
+import { Header } from "@jksaunders/bonfire";
 
 import { AppRouter } from "./components";
 
@@ -12,18 +13,9 @@ const StyledHeader = styled(Header)`
   padding: 8px ${contentWidth};
 `;
 
-const StyledBar = styled(Bar)`
-  align-items: center;
-  display: flex;
-  justify-content: center;
-`;
-
-const Content = styled.div`
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 32px;
-`;
-
 const AppHeader = ({
+  // eslint-disable-next-line react/prop-types
+  history,
   // eslint-disable-next-line react/prop-types
   showFloatingHeader
 }) => (
@@ -36,7 +28,8 @@ const AppHeader = ({
     ]}
     items={[
       { text: "Programs", link: "https://google.com" },
-      { text: "About Us", onClick: () => {} },
+      // eslint-disable-next-line react/prop-types
+      { text: "About Us", onClick: () => history.push("/about") },
       { text: "Events", onClick: () => {} },
       { text: "Contact Us", onClick: () => {} }
     ]}
@@ -47,37 +40,7 @@ const AppHeader = ({
   />
 );
 
-const Page = () => (
-  <React.Fragment>
-    <StyledBar backgroundUrl="https://images.unsplash.com/photo-1497906539264-eb74442e37a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80">
-      <Content><Typography.H2>bar content</Typography.H2></Content>
-    </StyledBar>
-    <StyledBar>
-      <Content><Typography.H2>bar content</Typography.H2></Content>
-    </StyledBar>
-    <StyledBar backgroundUrl="https://images.unsplash.com/photo-1497906539264-eb74442e37a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80">
-      <Content><Typography.H2>bar content</Typography.H2></Content>
-    </StyledBar>
-    <StyledBar>
-      <Content><Typography.H2>bar content</Typography.H2></Content>
-    </StyledBar>
-    <StyledBar backgroundUrl="https://images.unsplash.com/photo-1497906539264-eb74442e37a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80">
-      <Content><Typography.H2>bar content</Typography.H2></Content>
-    </StyledBar>
-    <StyledBar>
-      <Content><Typography.H2>bar content</Typography.H2></Content>
-    </StyledBar>
-    <StyledBar backgroundUrl="https://images.unsplash.com/photo-1497906539264-eb74442e37a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80">
-      <Content><Typography.H2>bar content</Typography.H2></Content>
-    </StyledBar>
-    <StyledBar>
-      <Content><Typography.H2>bar content</Typography.H2></Content>
-    </StyledBar>
-    <StyledBar backgroundUrl="https://images.unsplash.com/photo-1497906539264-eb74442e37a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80">
-      <Content><Typography.H2>bar content</Typography.H2></Content>
-    </StyledBar>
-  </React.Fragment>
-);
+const AppHeaderWithRouter = withRouter(AppHeader);
 
 const AppBody = ({
   // eslint-disable-next-line react/prop-types
@@ -112,8 +75,7 @@ const App = () => {
   return (
     <AppBody onScrollY={checkScroll}>
       <AppRouter>
-        <AppHeader showFloatingHeader={showFloatingHeader} />
-        <Page />
+        <AppHeaderWithRouter showFloatingHeader={showFloatingHeader} />
       </AppRouter>
     </AppBody>
   );
