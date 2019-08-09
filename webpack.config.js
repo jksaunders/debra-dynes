@@ -1,8 +1,9 @@
 const path = require("path");
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-module.exports = () => ({
+module.exports = env => ({
   entry: "./src/index.js",
   output: {
     filename: "main.js",
@@ -20,6 +21,9 @@ module.exports = () => ({
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new webpack.DefinePlugin({
+      "process.env.rootLocation": `/${env.rootLocation}/`
+    }),
     new HtmlWebpackPlugin({
       title: "Debra Dynes Family House",
       template: "index.html"
