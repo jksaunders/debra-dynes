@@ -22,7 +22,7 @@ module.exports = env => ({
   plugins: [
     new CleanWebpackPlugin(),
     new webpack.DefinePlugin({
-      "process.env.rootLocation": `/${env.rootLocation}/`
+      "process.env.rootLocation": env ? `"/${env.rootLocation}/"` : "\"\""
     }),
     new HtmlWebpackPlugin({
       title: "Debra Dynes Family House",

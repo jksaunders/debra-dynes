@@ -29,7 +29,7 @@ const AppHeader = ({
     items={[
       { text: "Programs", link: "https://google.com" },
       // eslint-disable-next-line react/prop-types
-      { text: "About Us", onClick: () => history.push("/about") },
+      { text: "About Us", onClick: () => history.push(AppRouter.ROUTES.ABOUT) },
       { text: "Events", onClick: () => {} },
       { text: "Contact Us", onClick: () => {} }
     ]}
