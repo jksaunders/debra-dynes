@@ -6,7 +6,7 @@ import { AboutUs, Home } from "./pages";
 const { rootLocation } = process.env;
 
 const ROUTES = {
-  HOME: `${rootLocation}`,
+  HOME: `${rootLocation}/`,
   ABOUT: `${rootLocation}/about`
 };
 
