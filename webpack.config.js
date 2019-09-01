@@ -7,8 +7,7 @@ module.exports = env => ({
   entry: "./src/index.js",
   output: {
     filename: "main.js",
-    path: path.resolve(__dirname, "dist"),
-    publicPath: env ? `"/${env.rootLocation}/"` : "/"
+    path: path.resolve(__dirname, "dist")
   },
   resolve: {
     alias: {
@@ -18,7 +17,6 @@ module.exports = env => ({
   },
   devServer: {
     contentBase: "./dist",
-    historyApiFallback: true,
     port: 9101
   },
   plugins: [
