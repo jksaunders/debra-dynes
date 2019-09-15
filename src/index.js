@@ -34,7 +34,8 @@ const AppHeader = ({
       { text: "Contact Us", onClick: () => {} }
     ]}
     height="125px"
-    logo={{ image: "https://kidsupfront.com/wp-content/uploads/2019/01/KUF-Color-150.png" }}
+    // eslint-disable-next-line react/prop-types
+    logo={{ image: "https://kidsupfront.com/wp-content/uploads/2019/01/KUF-Color-150.png", onClick: () => history.push(AppRouter.ROUTES.HOME) }}
     variant={Header.CONSTANTS.VARIANT.FULL}
     showFloatingHeader={showFloatingHeader}
   />
