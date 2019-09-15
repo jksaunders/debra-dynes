@@ -50,7 +50,7 @@ const JordynProfile = () => (
 
 const Profiles = () => (
   <StyledBar
-    background="linear-gradient(180deg, white 0%, lightblue 100%)"
+    background="linear-gradient(180deg, white 0%, #efefef 100%)"
   >
     <KaviProfile />
     <BarbaraProfile />
