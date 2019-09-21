@@ -27,7 +27,8 @@ const AppHeader = ({
       { text: "Donate", onClick: () => {}, variant: Header.HeaderButton.CONSTANTS.VARIANT.PRIMARY }
     ]}
     items={[
-      { text: "Programs", link: "https://google.com" },
+      // eslint-disable-next-line react/prop-types
+      { text: "Programs", onClick: () => history.push(AppRouter.ROUTES.PROGRAMS) },
       // eslint-disable-next-line react/prop-types
       { text: "About Us", onClick: () => history.push(AppRouter.ROUTES.ABOUT) },
       { text: "Events", onClick: () => {} },

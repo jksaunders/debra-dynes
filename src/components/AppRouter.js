@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { AboutUs, Home } from "./pages";
+import { AboutUs, Home, Programs } from "./pages";
 
 const { rootLocation } = process.env;
 
 const ROUTES = {
   HOME: `${rootLocation}/`,
-  ABOUT: `${rootLocation}/about`
+  ABOUT: `${rootLocation}/about`,
+  PROGRAMS: `${rootLocation}/programs`
 };
 
 const propTypes = {
@@ -23,6 +24,7 @@ const AppRouter = ({ children }) => (
     {children}
     <Route path={ROUTES.HOME} component={Home} exact />
     <Route path={ROUTES.ABOUT} component={AboutUs} exact />
+    <Route path={ROUTES.PROGRAMS} component={Programs} exact />
   </Router>
 );
 
