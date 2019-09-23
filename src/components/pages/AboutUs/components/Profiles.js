@@ -6,19 +6,11 @@ const StyledBar = styled(Bar)`
   align-items: start;
   display: flex;
   justify-content: center;
+  padding: 0px 10%;
 `;
 
 const StyledProfile = styled(UserCard)`
-  margin-left: 64px;
-  margin-right: 64px;
-
-  &:first-child {
-    margin-left: auto;
-  }
-
-  &:last-child {
-    margin-right: auto;
-  }
+  margin: 0px auto;
 `;
 
 const KaviProfile = () => (
