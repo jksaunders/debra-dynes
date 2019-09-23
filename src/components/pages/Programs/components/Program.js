@@ -10,7 +10,7 @@ const propTypes = {
 };
 
 const maxHeight = "250px";
-const maxWidth = "350px";
+const maxWidth = "450px";
 
 const ProgramContainer = styled.div`
   background-color: white;
@@ -25,22 +25,21 @@ const ProgramContainer = styled.div`
   padding: 32px;
 `;
 
-const Flex = styled.div`
-  flex: ${props => props.flex};
+const ImageWrapper = styled.div`
+  display: flex;
+  flex: 1;
+  margin-right: 16px;
 `;
 
-// const Image = styled.img`
-//   flex: 1;
-//   max-height: ${maxHeight}
-//   max-width: ${maxWidth}
-//   object-fit: cover;
-// `;
-
 const Image = styled.img`
-  flex: 1;
   object-fit: cover;
   max-width: 100%;
   height: auto;
+`;
+
+const TextWrapper = styled.div`
+  flex: 1;
+  margin-left: 16px;
 `;
 
 const Program = ({
@@ -49,13 +48,13 @@ const Program = ({
   image
 }) => (
   <ProgramContainer>
-    <Flex flex={2}>
+    <ImageWrapper>
+      <Image src={image} />
+    </ImageWrapper>
+    <TextWrapper>
       <Typography.H5>{title}</Typography.H5>
       <Typography.Body1>{description}</Typography.Body1>
-    </Flex>
-    <Flex flex={1}>
-      <Image src={image} />
-    </Flex>
+    </TextWrapper>
   </ProgramContainer>
 );
 

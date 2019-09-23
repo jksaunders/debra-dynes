@@ -17,6 +17,7 @@ module.exports = env => ({
   },
   devServer: {
     contentBase: "./dist",
+    historyApiFallback: true,
     port: 9101
   },
   plugins: [
