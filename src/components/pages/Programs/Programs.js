@@ -17,7 +17,7 @@ const Content = styled.div`
 `;
 
 const Programs = () => (
-  <React.Fragment>
+  <>
     <StyledBar
       backgroundColor="white"
     >
@@ -142,7 +142,7 @@ const Programs = () => (
         }
       ]}
     />
-  </React.Fragment>
+  </>
 );
 
 export default Programs;

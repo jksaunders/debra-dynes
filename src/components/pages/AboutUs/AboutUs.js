@@ -17,7 +17,7 @@ const Content = styled.div`
 `;
 
 const AboutUs = () => (
-  <React.Fragment>
+  <>
     <StyledBar
       backgroundColor="white"
     >
@@ -47,7 +47,7 @@ const AboutUs = () => (
     >
       <Content><Typography.H2>Contact Us</Typography.H2></Content>
     </StyledBar>
-  </React.Fragment>
+  </>
 );
 
 export default AboutUs;
