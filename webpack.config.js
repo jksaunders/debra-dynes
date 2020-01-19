@@ -1,7 +1,9 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const pages = require('./page-structure');
 
 module.exports = env => ({
   entry: './src/index.js',
@@ -30,10 +32,16 @@ module.exports = env => ({
     new webpack.DefinePlugin({
       'process.env.rootLocation': env ? `"/${env.rootLocation}"` : '""',
     }),
-    new HtmlWebpackPlugin({
-      title: 'Debra Dynes Family House',
-      template: 'index.html',
-    }),
+    ...pages().map(
+      p =>
+        new HtmlWebpackPlugin({
+          env: env || {},
+          filename: `${p.filename}.html`,
+          title: p.title,
+          description: p.description,
+          template: 'index.html',
+        })
+    ),
   ],
   module: {
     rules: [
