@@ -17,6 +17,7 @@ module.exports = env => ({
         'node_modules',
         'styled-components'
       ),
+      '@design': path.resolve(__dirname, 'src/design'),
     },
   },
   devServer: {

@@ -1,22 +1,30 @@
 {
-    "parser": "babel-eslint",
-    "plugins": ["prettier"],
-    "extends": ["airbnb", "airbnb/hooks", "plugin:prettier/recommended"],
-    "env": {
-      "browser": true,
-      "mocha": true
-    },
-    "rules": {
-      "prettier/prettier": "error",
-      "arrow-parens": "off",
-      "comma-dangle": ["error", "only-multiline"],
-      "eol-last": "off",
-      "react/jsx-filename-extension": "off",
-      "react/button-has-type": "off",
-      "quotes": "off",
-      "import/prefer-default-export": "off",
-      "react/jsx-props-no-spreading": "off",
-      "padding-line-between-statements": "off",
-      "spaced-comment": "off"
-    }
+  "parser": "babel-eslint",
+  "plugins": ["prettier"],
+  "extends": ["airbnb", "airbnb/hooks", "plugin:prettier/recommended"],
+  "env": {
+    "browser": true,
+    "mocha": true
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "arrow-parens": "off",
+    "comma-dangle": ["error", "only-multiline"],
+    "eol-last": "off",
+    "react/jsx-filename-extension": "off",
+    "react/button-has-type": "off",
+    "quotes": "off",
+    "import/prefer-default-export": "off",
+    "react/jsx-props-no-spreading": "off",
+    "padding-line-between-statements": "off",
+    "spaced-comment": "off",
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": [
+        "webpack.config.js"
+      ]
+    }]
+  },
+  "settings": {
+    "import/resolver": "webpack"
   }
+}

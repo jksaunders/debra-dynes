@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Bar, Typography, MaterialVariants } from '@jksaunders/bonfire';
+import * as Spacing from '@design/Spacing';
 import Program from './Program';
 
 const propTypes = {
@@ -28,7 +29,7 @@ const ProgramsContainer = styled(Bar)`
 
 const Content = styled.div`
   background-color: rgba(255, 255, 255, 0.7);
-  padding: 32px;
+  padding: ${Spacing.largePx};
 `;
 
 const ProgramSection = ({ title, description, programs }) => (
