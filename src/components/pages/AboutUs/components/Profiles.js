@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Bar, UserCard } from "@jksaunders/bonfire";
+import { Bar } from "@jksaunders/bonfire";
+import UserCard from "./UserCard";
 
 const StyledBar = styled(Bar)`
   align-items: start;
