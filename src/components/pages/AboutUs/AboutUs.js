@@ -1,36 +1,37 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Bar, Typography, MaterialVariants } from '@jksaunders/bonfire';
+import { Typography, MaterialVariants, Layout } from '@jksaunders/bonfire';
+import * as Spacing from '@design/Spacing';
 import { Profiles } from './components';
 
-const StyledBar = styled(Bar)`
-  align-items: center;
-  display: flex;
-  ${props => `flex-direction: ${props.direction || 'column'};`}
-  justify-content: center;
-  padding: 0px 8%;
-`;
+// eslint-disable-next-line react/prop-types
+const Content = ({ children }) => (
+  <Layout
+    background="rgba(255, 255, 255, 0.7)"
+    padding={Spacing.largePx}
+    width="max-content"
+  >
+    {children}
+  </Layout>
+);
 
-const Content = styled.div`
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 32px;
-`;
-
-const AboutUs = () => (
-  <>
-    <StyledBar backgroundColor="white">
-      <Content>
-        <Typography variant={MaterialVariants.H2}>
-          Debra Dynes Family House
-        </Typography>
-      </Content>
-      <Typography variant={MaterialVariants.Body1}>
-        Debra Dynes Family House is a multiservice community resources center in
-        a low-income social housing area. Over 100 people per day from a wide
-        geographic area access our programs and services!
+const Description = () => (
+  <Layout centered column padding="0px 8%">
+    <Content>
+      <Typography variant={MaterialVariants.H2}>
+        Debra Dynes Family House
       </Typography>
-    </StyledBar>
-    <StyledBar backgroundColor="white">
+    </Content>
+    <Typography variant={MaterialVariants.Body1}>
+      Debra Dynes Family House is a multiservice community resources center in a
+      low-income social housing area. Over 100 people per day from a wide
+      geographic area access our programs and services!
+    </Typography>
+  </Layout>
+);
+
+const MeetTheTeam = () => (
+  <>
+    <Layout centered>
       <Content>
         <Typography variant={MaterialVariants.H2}>Meet The Team</Typography>
       </Content>
@@ -40,14 +41,28 @@ const AboutUs = () => (
           cool. Great job y&apos;all.
         </Typography>
       </Content>
-    </StyledBar>
+    </Layout>
     <Profiles />
-    <StyledBar backgroundColor="#efefef">
-      <Content>
-        <Typography variant={MaterialVariants.H2}>Contact Us</Typography>
-      </Content>
-    </StyledBar>
   </>
+);
+
+const ContactUs = () => (
+  <Layout background="#efefef" centered>
+    <Content>
+      <Typography variant={MaterialVariants.H2}>Contact Us</Typography>
+    </Content>
+  </Layout>
+);
+
+const AboutUs = () => (
+  <Layout
+    background="linear-gradient(180deg, white 0%, #efefef 100%)"
+    gap={Spacing.largePx}
+  >
+    <Description />
+    <MeetTheTeam />
+    <ContactUs />
+  </Layout>
 );
 
 export default AboutUs;

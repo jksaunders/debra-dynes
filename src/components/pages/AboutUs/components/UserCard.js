@@ -63,7 +63,7 @@ const UserCard = ({
         <Typography variant={MaterialVariants.H5}>{name}</Typography>
       </CenteredText>
       <CenteredText>
-        <Typography center variant={MaterialVariants.Body1}>
+        <Typography center spaceAfter={false} variant={MaterialVariants.Body1}>
           {bodyText}
         </Typography>
       </CenteredText>
