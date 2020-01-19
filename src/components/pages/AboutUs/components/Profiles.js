@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { Bar } from "@jksaunders/bonfire";
-import UserCard from "./UserCard";
+import React from 'react';
+import styled from 'styled-components';
+import { Bar } from '@jksaunders/bonfire';
+import UserCard from './UserCard';
 
 const StyledBar = styled(Bar)`
   align-items: start;
@@ -42,9 +42,7 @@ const JordynProfile = () => (
 );
 
 const Profiles = () => (
-  <StyledBar
-    background="linear-gradient(180deg, white 0%, #efefef 100%)"
-  >
+  <StyledBar background="linear-gradient(180deg, white 0%, #efefef 100%)">
     <KaviProfile />
     <BarbaraProfile />
     <JordynProfile />

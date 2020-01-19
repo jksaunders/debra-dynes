@@ -1,16 +1,16 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import { Typography, colors, MaterialVariants } from "@jksaunders/bonfire";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Typography, colors, MaterialVariants } from '@jksaunders/bonfire';
 
 const propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired
+  image: PropTypes.string.isRequired,
 };
 
-const maxHeight = "250px";
-const maxWidth = "450px";
+const maxHeight = '250px';
+const maxWidth = '450px';
 
 const ProgramContainer = styled.div`
   background-color: white;
@@ -42,11 +42,7 @@ const TextWrapper = styled.div`
   margin-left: 16px;
 `;
 
-const Program = ({
-  title,
-  description,
-  image
-}) => (
+const Program = ({ title, description, image }) => (
   <ProgramContainer>
     <ImageWrapper>
       <Image src={image} />

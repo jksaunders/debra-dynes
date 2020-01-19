@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import { Typography, MaterialVariants } from "@jksaunders/bonfire";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Typography, MaterialVariants } from '@jksaunders/bonfire';
 
 const propTypes = {
   bodyText: PropTypes.string.isRequired,
@@ -18,7 +18,7 @@ const defaultProps = {
   maxWidth: null,
 };
 
-const borderColor = "#F1F1EF";
+const borderColor = '#F1F1EF';
 
 const CardWrapper = styled.div`
   background-color: white;

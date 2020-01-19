@@ -1,3 +1,3 @@
-import Programs from "./Programs";
+import Programs from './Programs';
 
 export default Programs;

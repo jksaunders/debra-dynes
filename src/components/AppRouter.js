@@ -1,22 +1,22 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { AboutUs, Home, Programs } from "./pages";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { AboutUs, Home, Programs } from './pages';
 
 const { rootLocation } = process.env;
 
 const ROUTES = {
   HOME: `${rootLocation}/`,
   ABOUT: `${rootLocation}/about`,
-  PROGRAMS: `${rootLocation}/programs`
+  PROGRAMS: `${rootLocation}/programs`,
 };
 
 const propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 const defaultProps = {
-  children: null
+  children: null,
 };
 
 const AppRouter = ({ children }) => (

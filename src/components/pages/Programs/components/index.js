@@ -1,1 +1,1 @@
-export { default as ProgramSection } from "./ProgramSection";
+export { default as ProgramSection } from './ProgramSection';

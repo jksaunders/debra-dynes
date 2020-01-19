@@ -1,19 +1,19 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import { Bar, Typography, MaterialVariants } from "@jksaunders/bonfire";
-import Program from "./Program";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Bar, Typography, MaterialVariants } from '@jksaunders/bonfire';
+import Program from './Program';
 
 const propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  programs: PropTypes.arrayOf(PropTypes.shape(Program.SHAPE)).isRequired
+  programs: PropTypes.arrayOf(PropTypes.shape(Program.SHAPE)).isRequired,
 };
 
 const StyledBar = styled(Bar)`
   align-items: center;
   display: flex;
-  ${props => `flex-direction: ${props.direction || "column"};`}
+  ${props => `flex-direction: ${props.direction || 'column'};`}
   justify-content: space-around;
   padding: 0px 8%;
 `;
@@ -31,22 +31,18 @@ const Content = styled.div`
   padding: 32px;
 `;
 
-const ProgramSection = ({
-  title,
-  description,
-  programs
-}) => (
-  <StyledBar
-    backgroundColor="white"
-  >
-    <Content><Typography variant={MaterialVariants.H2}>{title}</Typography></Content>
+const ProgramSection = ({ title, description, programs }) => (
+  <StyledBar backgroundColor="white">
     <Content>
-      <Typography variant={MaterialVariants.H5}>
-        {description}
-      </Typography>
+      <Typography variant={MaterialVariants.H2}>{title}</Typography>
+    </Content>
+    <Content>
+      <Typography variant={MaterialVariants.H5}>{description}</Typography>
     </Content>
     <ProgramsContainer>
-      { programs.map(p => <Program key={p.title} {...p} />) }
+      {programs.map(p => (
+        <Program key={p.title} {...p} />
+      ))}
     </ProgramsContainer>
   </StyledBar>
 );
