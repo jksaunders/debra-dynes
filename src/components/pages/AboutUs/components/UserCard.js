@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Typography, MaterialVariants } from '@jksaunders/bonfire';
+import * as Colors from '@design/Colors';
 
 const propTypes = {
   bodyText: PropTypes.string.isRequired,
@@ -18,11 +19,9 @@ const defaultProps = {
   maxWidth: null,
 };
 
-const borderColor = '#F1F1EF';
-
 const CardWrapper = styled.div`
   background-color: white;
-  border-color: ${borderColor};
+  border-color: ${Colors.lightGrey};
   border-style: solid;
   border-width: 1px;
   display: inline-block;

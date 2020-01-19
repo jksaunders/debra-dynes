@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { Bar, Typography, MaterialVariants } from '@jksaunders/bonfire';
+import { Layout, Typography, MaterialVariants } from '@jksaunders/bonfire';
 import * as Spacing from '@design/Spacing';
 import Program from './Program';
 
@@ -11,41 +10,27 @@ const propTypes = {
   programs: PropTypes.arrayOf(PropTypes.shape(Program.SHAPE)).isRequired,
 };
 
-const StyledBar = styled(Bar)`
-  align-items: center;
-  display: flex;
-  ${props => `flex-direction: ${props.direction || 'column'};`}
-  justify-content: space-around;
-  padding: 0px 8%;
-`;
-
-const ProgramsContainer = styled(Bar)`
-  justify-content: space-evenly;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-`;
-
-const Content = styled.div`
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: ${Spacing.largePx};
-`;
-
 const ProgramSection = ({ title, description, programs }) => (
-  <StyledBar backgroundColor="white">
-    <Content>
-      <Typography variant={MaterialVariants.H2}>{title}</Typography>
-    </Content>
-    <Content>
-      <Typography variant={MaterialVariants.H5}>{description}</Typography>
-    </Content>
-    <ProgramsContainer>
+  <Layout
+    background="white"
+    centered
+    column
+    gap={Spacing.largePx}
+    padding={Spacing.largePx}
+  >
+    <Typography variant={MaterialVariants.H2}>{title}</Typography>
+    <Typography variant={MaterialVariants.H5}>{description}</Typography>
+    <Layout
+      align="content-center"
+      columns="repeat(auto-fit, 450px)"
+      full
+      gap={Spacing.mediumLargePx}
+    >
       {programs.map(p => (
         <Program key={p.title} {...p} />
       ))}
-    </ProgramsContainer>
-  </StyledBar>
+    </Layout>
+  </Layout>
 );
 
 ProgramSection.propTypes = propTypes;

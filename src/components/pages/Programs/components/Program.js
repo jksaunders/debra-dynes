@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Typography, colors, MaterialVariants } from '@jksaunders/bonfire';
+import { Typography, MaterialVariants, Layout } from '@jksaunders/bonfire';
+import * as Colors from '@design/Colors';
+import * as Spacing from '@design/Spacing';
 
 const propTypes = {
   title: PropTypes.string.isRequired,
@@ -12,23 +14,24 @@ const propTypes = {
 const maxHeight = '250px';
 const maxWidth = '450px';
 
-const ProgramContainer = styled.div`
-  background-color: white;
-  border-color: ${colors.cotton};
-  border-style: solid;
-  border-width: 1px;
-  display: flex;
-  flex-direction: row;
-  margin: 15px 0px;
-  max-height: ${maxHeight};
-  max-width: ${maxWidth};
-  padding: 32px;
-`;
+// eslint-disable-next-line react/prop-types
+const ProgramContainer = ({ children }) => (
+  <Layout
+    background="white"
+    border={`1px solid ${Colors.lightGrey}`}
+    gap={Spacing.largePx}
+    maxHeight={maxHeight}
+    maxWidth={maxWidth}
+    overflowY="hidden"
+    padding={Spacing.largePx}
+    row
+  >
+    {children}
+  </Layout>
+);
 
 const ImageWrapper = styled.div`
   display: flex;
-  flex: 1;
-  margin-right: 16px;
 `;
 
 const Image = styled.img`
@@ -37,20 +40,15 @@ const Image = styled.img`
   height: auto;
 `;
 
-const TextWrapper = styled.div`
-  flex: 1;
-  margin-left: 16px;
-`;
-
 const Program = ({ title, description, image }) => (
   <ProgramContainer>
     <ImageWrapper>
       <Image src={image} />
     </ImageWrapper>
-    <TextWrapper>
+    <Layout column>
       <Typography variant={MaterialVariants.H5}>{title}</Typography>
       <Typography variant={MaterialVariants.Body1}>{description}</Typography>
-    </TextWrapper>
+    </Layout>
   </ProgramContainer>
 );
 
