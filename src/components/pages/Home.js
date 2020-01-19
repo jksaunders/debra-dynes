@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Bar, Typography } from "@jksaunders/bonfire";
+import { Bar, Typography, MaterialVariants } from "@jksaunders/bonfire";
 
 const StyledBar = styled(Bar)`
   align-items: center;
@@ -16,31 +16,31 @@ const Content = styled.div`
 const Home = () => (
   <>
     <StyledBar backgroundUrl="https://images.unsplash.com/photo-1497906539264-eb74442e37a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80">
-      <Content><Typography.H2>bar content</Typography.H2></Content>
+      <Content><Typography variant={MaterialVariants.H2}>bar content</Typography></Content>
     </StyledBar>
     <StyledBar>
-      <Content><Typography.H2>bar content</Typography.H2></Content>
+      <Content><Typography variant={MaterialVariants.H2}>bar content</Typography></Content>
     </StyledBar>
     <StyledBar backgroundUrl="https://images.unsplash.com/photo-1497906539264-eb74442e37a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80">
-      <Content><Typography.H2>bar content</Typography.H2></Content>
+      <Content><Typography variant={MaterialVariants.H2}>bar content</Typography></Content>
     </StyledBar>
     <StyledBar>
-      <Content><Typography.H2>bar content</Typography.H2></Content>
+      <Content><Typography variant={MaterialVariants.H2}>bar content</Typography></Content>
     </StyledBar>
     <StyledBar backgroundUrl="https://images.unsplash.com/photo-1497906539264-eb74442e37a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80">
-      <Content><Typography.H2>bar content</Typography.H2></Content>
+      <Content><Typography variant={MaterialVariants.H2}>bar content</Typography></Content>
     </StyledBar>
     <StyledBar>
-      <Content><Typography.H2>bar content</Typography.H2></Content>
+      <Content><Typography variant={MaterialVariants.H2}>bar content</Typography></Content>
     </StyledBar>
     <StyledBar backgroundUrl="https://images.unsplash.com/photo-1497906539264-eb74442e37a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80">
-      <Content><Typography.H2>bar content</Typography.H2></Content>
+      <Content><Typography variant={MaterialVariants.H2}>bar content</Typography></Content>
     </StyledBar>
     <StyledBar>
-      <Content><Typography.H2>bar content</Typography.H2></Content>
+      <Content><Typography variant={MaterialVariants.H2}>bar content</Typography></Content>
     </StyledBar>
     <StyledBar backgroundUrl="https://images.unsplash.com/photo-1497906539264-eb74442e37a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80">
-      <Content><Typography.H2>bar content</Typography.H2></Content>
+      <Content><Typography variant={MaterialVariants.H2}>bar content</Typography></Content>
     </StyledBar>
   </>
 );

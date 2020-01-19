@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { Bar, Typography } from "@jksaunders/bonfire";
+import { Bar, Typography, MaterialVariants } from "@jksaunders/bonfire";
 import Program from "./Program";
 
 const propTypes = {
@@ -13,7 +13,7 @@ const propTypes = {
 const StyledBar = styled(Bar)`
   align-items: center;
   display: flex;
-  ${props => `flex-direction: ${props.direction || "column"}`}
+  ${props => `flex-direction: ${props.direction || "column"};`}
   justify-content: space-around;
   padding: 0px 8%;
 `;
@@ -39,11 +39,11 @@ const ProgramSection = ({
   <StyledBar
     backgroundColor="white"
   >
-    <Content><Typography.H2>{title}</Typography.H2></Content>
+    <Content><Typography variant={MaterialVariants.H2}>{title}</Typography></Content>
     <Content>
-      <Typography.H5>
+      <Typography variant={MaterialVariants.H5}>
         {description}
-      </Typography.H5>
+      </Typography>
     </Content>
     <ProgramsContainer>
       { programs.map(p => <Program key={p.title} {...p} />) }

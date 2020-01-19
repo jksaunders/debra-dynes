@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { Typography, colors } from "@jksaunders/bonfire";
+import { Typography, colors, MaterialVariants } from "@jksaunders/bonfire";
 
 const propTypes = {
   title: PropTypes.string.isRequired,
@@ -52,8 +52,8 @@ const Program = ({
       <Image src={image} />
     </ImageWrapper>
     <TextWrapper>
-      <Typography.H5>{title}</Typography.H5>
-      <Typography.Body1>{description}</Typography.Body1>
+      <Typography variant={MaterialVariants.H5}>{title}</Typography>
+      <Typography variant={MaterialVariants.Body1}>{description}</Typography>
     </TextWrapper>
   </ProgramContainer>
 );

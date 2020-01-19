@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { withRouter } from "react-router-dom";
 import { useGesture } from "react-use-gesture";
 import styled, { ThemeProvider } from "styled-components";
-import { Header } from "@jksaunders/bonfire";
+import { Header, MaterialVariants } from "@jksaunders/bonfire";
 
 import { AppRouter } from "./components";
 
@@ -24,7 +24,15 @@ const AppHeader = ({
       backgroundColor: "white"
     }}
     buttons={[
-      { text: "Donate", onClick: () => {}, variant: Header.HeaderButton.CONSTANTS.VARIANT.PRIMARY }
+      {
+        text: "Donate",
+        onClick: () => {},
+        background: "rgb(0,0,0)",
+        borderRadius: "0.25em",
+        padding: "4px",
+        typography: { ...MaterialVariants.ButtonText, bold: true },
+        width: "100px"
+      }
     ]}
     items={[
       // eslint-disable-next-line react/prop-types

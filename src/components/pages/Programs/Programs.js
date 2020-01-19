@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { Bar, Typography } from "@jksaunders/bonfire";
+import { Bar, Typography, MaterialVariants } from "@jksaunders/bonfire";
 import { ProgramSection } from "./components";
 
 const StyledBar = styled(Bar)`
   align-items: center;
   display: flex;
-  ${props => `flex-direction: ${props.direction || "column"}`}
+  ${props => `flex-direction: ${props.direction || "column"};`}
   justify-content: center;
   padding: 0px 8%;
 `;
@@ -22,11 +22,11 @@ const Programs = () => (
       backgroundColor="white"
     >
       <Content>
-        <Typography.H2>Programs</Typography.H2>
+        <Typography variant={MaterialVariants.H2}>Programs</Typography>
       </Content>
-      <Typography.H5>
+      <Typography variant={MaterialVariants.H5}>
           We have a bunch of stellar programs that do a lot of good for a lot of people.
-      </Typography.H5>
+      </Typography>
     </StyledBar>
     <ProgramSection
       title="Adults"
