@@ -1,24 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Bar, Typography, MaterialVariants } from '@jksaunders/bonfire';
+import { Layout, Typography, MaterialVariants } from '@jksaunders/bonfire';
+import * as Spacing from '@design/Spacing';
 import { ProgramSection } from './components';
-
-const StyledBar = styled(Bar)`
-  align-items: center;
-  display: flex;
-  ${props => `flex-direction: ${props.direction || 'column'};`}
-  justify-content: center;
-  padding: 0px 8%;
-`;
 
 const Content = styled.div`
   background-color: rgba(255, 255, 255, 0.7);
   padding: 32px;
+  width: max-content;
 `;
 
 const Programs = () => (
-  <>
-    <StyledBar backgroundColor="white">
+  <Layout gap={Spacing.xLargePx}>
+    <Layout backgroundColor="white" centered>
       <Content>
         <Typography variant={MaterialVariants.H2}>Programs</Typography>
       </Content>
@@ -26,7 +20,7 @@ const Programs = () => (
         We have a bunch of stellar programs that do a lot of good for a lot of
         people.
       </Typography>
-    </StyledBar>
+    </Layout>
     <ProgramSection
       title="Adults"
       description="Programs for adults!"
@@ -176,7 +170,7 @@ const Programs = () => (
         },
       ]}
     />
-  </>
+  </Layout>
 );
 
 export default Programs;

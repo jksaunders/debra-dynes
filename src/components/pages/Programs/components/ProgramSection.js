@@ -11,13 +11,7 @@ const propTypes = {
 };
 
 const ProgramSection = ({ title, description, programs }) => (
-  <Layout
-    background="white"
-    centered
-    column
-    gap={Spacing.largePx}
-    padding={Spacing.largePx}
-  >
+  <Layout background="white" centered column gap={Spacing.largePx}>
     <Typography variant={MaterialVariants.H2}>{title}</Typography>
     <Typography variant={MaterialVariants.H5}>{description}</Typography>
     <Layout
